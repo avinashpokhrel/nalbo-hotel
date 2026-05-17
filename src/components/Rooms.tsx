@@ -152,8 +152,7 @@ export default function Rooms() {
               </div>
 
               {/* Info Section */}
-              <div className="relative w-full lg:w-2/5 flex flex-col max-h-full">
-                <div className="p-6 sm:p-8 lg:p-14 overflow-y-auto flex-1 pb-32">
+              <div className="w-full lg:w-2/5 p-6 sm:p-8 lg:p-14 overflow-y-auto flex-1">
                 <span className="font-body uppercase tracking-[0.2em] text-sage text-[10px] block mb-3 sm:mb-4 font-bold">Luxury Collection</span>
                 <h3 className="font-display italic text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-charcoal mb-4 sm:mb-6 lg:mb-8 leading-tight">{selectedRoom.name}</h3>
                 
@@ -184,16 +183,11 @@ export default function Rooms() {
                   </div>
                 </div>
 
-                  <div className="pt-8 sm:pt-10 border-t border-gold/20">
-                    <div className="flex items-end gap-2">
-                      <span className="font-body text-2xl sm:text-3xl font-medium text-charcoal">{selectedRoom.price}</span>
-                      <span className="font-body text-mocha/50 text-sm mb-0.5 sm:mb-1">/ per night</span>
-                    </div>
+                <div className="mt-auto pt-8 sm:pt-10 border-t border-gold/20 flex flex-col gap-4 sm:gap-6">
+                  <div className="flex items-end gap-2">
+                    <span className="font-body text-2xl sm:text-3xl font-medium text-charcoal">{selectedRoom.price}</span>
+                    <span className="font-body text-mocha/50 text-sm mb-0.5 sm:mb-1">/ per night</span>
                   </div>
-                </div>
-                
-                {/* Sticky Button Container */}
-                <div className="absolute bottom-0 left-0 right-0 bg-cream p-6 sm:p-8 lg:px-14 lg:pb-10 border-t border-gold/20 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
                   <button 
                     onClick={openBookingModal}
                     className="w-full bg-gold text-white font-body uppercase tracking-[0.2em] text-[11px] py-4 sm:py-5 rounded-full hover:bg-gold/85 transition-all font-bold shadow-lg shadow-gold/20"

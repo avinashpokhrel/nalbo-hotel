@@ -55,47 +55,49 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-lg bg-cream rounded-[32px] overflow-hidden shadow-2xl z-10"
+              className="relative w-full max-w-lg bg-cream rounded-2xl sm:rounded-[32px] shadow-2xl z-10 flex flex-col max-h-[90vh]"
             >
-              <button
-                onClick={closeBookingModal}
-                className="absolute top-6 right-6 text-mocha/40 hover:text-charcoal transition-colors p-2"
-              >
-                <X size={20} />
-              </button>
+              <div className="flex-shrink-0">
+                <button
+                  onClick={closeBookingModal}
+                  className="absolute top-4 right-4 sm:top-6 sm:right-6 text-mocha/40 hover:text-charcoal transition-colors p-2"
+                >
+                  <X size={20} />
+                </button>
+              </div>
 
-              <div className="p-10 lg:p-12 text-center">
-                <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-8">
-                  <Phone size={28} className="text-gold" />
+              <div className="p-6 sm:p-8 text-center">
+                <div className="w-14 h-14 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Phone size={24} className="text-gold" />
                 </div>
                 
-                <h3 className="font-display italic text-3xl lg:text-4xl text-charcoal mb-6 leading-tight">
+                <h3 className="font-display italic text-2xl lg:text-3xl text-charcoal mb-4 leading-tight">
                   Secure Your Sanctuary
                 </h3>
                 
-                <p className="font-body text-mocha/80 text-sm lg:text-base leading-relaxed mb-10">
+                <p className="font-body text-mocha/80 text-sm leading-relaxed mb-8">
                   To ensure the best possible experience and personalized service, we handle all reservations via direct communication. Please call our reception to finalize your stay.
                 </p>
 
-                <div className="bg-ivory border border-gold/10 rounded-2xl p-6 mb-8 relative group">
+                <div className="bg-ivory border border-gold/10 rounded-2xl p-4 mb-6 relative group">
                   <p className="font-body text-[10px] uppercase tracking-widest text-mocha/50 mb-2 font-bold">Reception Desk</p>
-                  <p className="font-body text-2xl lg:text-3xl text-charcoal font-bold tracking-tight">
+                  <p className="font-serif text-xl lg:text-2xl text-charcoal">
                     {siteConfig.contact.phone}
                   </p>
                   
                   <button 
                     onClick={handleCopy}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-xl hover:bg-gold/10 transition-all text-gold"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-lg hover:bg-gold/10 transition-all text-gold"
                     title="Copy Phone Number"
                   >
-                    {copied ? <Check size={18} /> : <Copy size={18} />}
+                    {copied ? <Check size={16} /> : <Copy size={16} />}
                   </button>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <a 
                     href={`tel:${siteConfig.contact.phone}`}
-                    className="flex items-center justify-center gap-3 w-full bg-gold text-white font-body uppercase tracking-[0.2em] text-[11px] py-5 rounded-full hover:bg-gold/85 transition-all font-bold shadow-lg shadow-gold/20"
+                    className="flex items-center justify-center gap-3 w-full bg-gold text-white font-body uppercase tracking-[0.2em] text-[11px] py-4 rounded-full hover:bg-gold/85 transition-all font-bold shadow-lg shadow-gold/20"
                   >
                     <Phone size={14} />
                     Call Reception Now

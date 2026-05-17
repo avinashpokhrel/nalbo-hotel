@@ -110,11 +110,8 @@ function buildSeoHead(s: typeof seo): string {
     <meta name="msapplication-TileColor" content="#1C1511" />
 
     <!-- ─── Performance: Preconnect / DNS-prefetch ───────────────────────── -->
-    <link rel="preconnect"   href="https://images.unsplash.com" />
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
     <link rel="preconnect"   href="https://maps.googleapis.com" />
     <link rel="dns-prefetch" href="https://maps.googleapis.com" />
-    <link rel="preconnect"   href="https://www.google.com" />
 
     <!-- ─── JSON-LD: Hotel / LodgingBusiness Schema ──────────────────────── -->
     <script type="application/ld+json">

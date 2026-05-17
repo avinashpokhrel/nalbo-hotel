@@ -21,45 +21,46 @@ export default function ContactBanner() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center text-center"
+            className="flex flex-col items-center"
           >
-            <span className="font-body uppercase tracking-[0.3em] text-gold text-[10px] block mb-6 font-bold">Reservations & Location</span>
-            <h2 className="font-display italic font-light text-charcoal text-3xl md:text-5xl lg:text-7xl mb-8 lg:mb-12 leading-tight">
+            <span className="font-body uppercase tracking-[0.3em] text-gold text-[10px] block mb-6 font-bold text-center">Reservations & Location</span>
+            <h2 className="font-display italic font-light text-charcoal text-3xl md:text-5xl lg:text-7xl mb-8 lg:mb-12 leading-tight text-center">
               Begin Your Journey<br className="hidden md:block" />to Serenity
             </h2>
             
-            <div className="space-y-10 mb-16 w-full max-w-md">
-              <div className="flex flex-col items-center gap-4">
+            {/* Contact info — constrained to same width as button, centered */}
+            <div className="flex flex-col gap-6 mb-16 w-full max-w-xs mx-auto">
+              <div className="flex items-start gap-4 w-full">
                 <div className="w-12 h-12 rounded-full border border-gold/20 flex items-center justify-center text-gold shrink-0">
                   <MapPin size={20} />
                 </div>
-                <div className="text-center">
-                  <p className="font-body text-[10px] uppercase tracking-widest text-mocha mb-2 font-bold">Address</p>
-                  <p className="font-body text-mocha/80 text-base leading-relaxed">{contact.address}</p>
+                <div className="flex flex-col gap-1 flex-1">
+                  <p className="font-body text-[10px] uppercase tracking-widest text-mocha font-bold">Address</p>
+                  <p className="font-body text-mocha/80 text-sm leading-relaxed">{contact.address}</p>
                 </div>
               </div>
-
-              <div className="flex flex-col items-center gap-4">
+          
+              <div className="flex items-start gap-4 w-full">
                 <div className="w-12 h-12 rounded-full border border-gold/20 flex items-center justify-center text-gold shrink-0">
                   <Phone size={20} />
                 </div>
-                <div className="text-center">
-                  <p className="font-body text-[10px] uppercase tracking-widest text-mocha mb-2 font-bold">Booking Hotline</p>
-                  <p className="font-body text-mocha/80 text-base leading-relaxed">{contact.phone}</p>
+                <div className="flex flex-col gap-1 flex-1">
+                  <p className="font-body text-[10px] uppercase tracking-widest text-mocha font-bold">Booking Hotline</p>
+                  <p className="font-body text-mocha/80 text-sm leading-relaxed">{contact.phone}</p>
                 </div>
               </div>
-
-              <div className="flex flex-col items-center gap-4">
+          
+              <div className="flex items-start gap-4 w-full">
                 <div className="w-12 h-12 rounded-full border border-gold/20 flex items-center justify-center text-gold shrink-0">
                   <Mail size={20} />
                 </div>
-                <div className="text-center">
-                  <p className="font-body text-[10px] uppercase tracking-widest text-mocha mb-2 font-bold">Email Inquiries</p>
-                  <p className="font-body text-mocha/80 text-base leading-relaxed">{contact.email}</p>
+                <div className="flex flex-col gap-1 flex-1">
+                  <p className="font-body text-[10px] uppercase tracking-widest text-mocha font-bold">Email Inquiries</p>
+                  <p className="font-body text-mocha/80 text-sm leading-relaxed">{contact.email}</p>
                 </div>
               </div>
             </div>
-
+          
             <div className="flex flex-col gap-6 items-center w-full">
               <button 
                 onClick={openBookingModal}
@@ -68,7 +69,7 @@ export default function ContactBanner() {
                 Book a Stay
               </button>
               
-              <div className="flex gap-6 items-center">
+              <div className="flex gap-4 items-center">
                 {socials.map((social) => {
                   const Icon = social.icon;
                   return (
@@ -77,7 +78,7 @@ export default function ContactBanner() {
                       href={social.url} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="text-mocha/40 hover:text-gold transition-colors"
+                      className="text-gold hover:text-white hover:bg-gold p-2 rounded-full transition-colors"
                     >
                       <Icon size={18} />
                     </a>

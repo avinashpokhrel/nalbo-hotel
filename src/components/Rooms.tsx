@@ -102,7 +102,7 @@ export default function Rooms() {
       {/* Room Detail Modal */}
       <AnimatePresence>
         {selectedRoom && (
-          <div className="fixed inset-0 z-[200] flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-8 overflow-hidden">
+          <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 md:p-8">
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -114,7 +114,7 @@ export default function Rooms() {
               initial={{ opacity: 0, scale: 0.95, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 30 }}
-              className="relative w-full max-w-6xl bg-cream rounded-t-[24px] sm:rounded-[32px] lg:rounded-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row max-h-[95vh] sm:h-auto sm:max-h-[90vh] lg:h-[800px] z-10"
+              className="relative w-full max-w-6xl bg-cream rounded-2xl sm:rounded-[32px] lg:rounded-[40px] shadow-2xl flex flex-col lg:flex-row max-h-[90vh] lg:h-[85vh] lg:max-h-[800px] z-10"
             >
               <button 
                 onClick={() => setSelectedRoom(null)}

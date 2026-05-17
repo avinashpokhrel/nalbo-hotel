@@ -58,7 +58,7 @@ export default function Hero() {
       <div className="grain absolute inset-0 z-[5] pointer-events-none" />
 
       {/* Main content container */}
-      <div className="relative z-10 flex flex-col h-full px-8 lg:px-16 items-center justify-center text-center">
+      <div className="relative z-10 flex flex-col h-full px-4 sm:px-8 lg:px-16 items-center justify-center text-center">
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -69,7 +69,7 @@ export default function Hero() {
             {hero.tagline}
           </motion.p>
 
-          <motion.h1 variants={fadeUp} className="font-display font-light italic text-cream text-4xl md:text-6xl lg:text-[84px] lg:leading-[1.1] mb-6 lg:mb-8 drop-shadow-lg">
+          <motion.h1 variants={fadeUp} className="font-display font-light italic text-cream text-3xl sm:text-4xl md:text-6xl lg:text-[84px] lg:leading-[1.1] mb-6 lg:mb-8 drop-shadow-lg">
             {hero.title}
           </motion.h1>
 
@@ -77,13 +77,13 @@ export default function Hero() {
              {hero.subDescription}
           </motion.p>
 
-          <motion.div variants={fadeUp} className="flex gap-4 flex-wrap justify-center">
-            <a href="#rooms" className="bg-gold text-white font-body uppercase tracking-widest text-xs px-10 py-4 rounded-full hover:bg-gold/85 transition-all duration-300 font-bold shadow-xl shadow-gold/10 text-center">
+          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full sm:w-auto">
+            <a href="#rooms" className="w-full sm:w-auto bg-gold text-white font-body uppercase tracking-widest text-xs px-10 py-4 rounded-full hover:bg-gold/85 transition-all duration-300 font-bold shadow-xl shadow-gold/10 text-center">
               Explore Rooms
             </a>
             <button 
               onClick={openBookingModal}
-              className="border border-cream/50 text-cream font-body uppercase tracking-widest text-xs px-10 py-4 rounded-full hover:border-gold hover:text-gold transition-all duration-300 backdrop-blur-sm"
+              className="w-full sm:w-auto border border-cream/50 text-cream font-body uppercase tracking-widest text-xs px-10 py-4 rounded-full hover:border-gold hover:text-gold transition-all duration-300 backdrop-blur-sm"
             >
               Book Now
             </button>

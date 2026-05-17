@@ -19,9 +19,9 @@ export default function Footer() {
   return (
     <footer className="bg-espresso border-t border-gold/20">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-16">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="flex flex-col items-center gap-10">
           {/* Column 1 — Brand Identity */}
-          <div className="col-span-2 lg:col-span-1">
+          <div className="flex flex-col items-center text-center">
             <a href="/" className="font-display italic text-2xl text-cream">
               {siteConfig.name}
             </a>
@@ -30,24 +30,26 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Column 2 — Structural Navigation */}
-          <div>
-            <h5 className="font-body uppercase tracking-widest2 text-gold text-xs mb-5">Explore</h5>
-            <ul className="space-y-3">
-              {exploreLinks.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} className="font-body text-sm text-cream/50 hover:text-gold transition-colors">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Columns 2 & 3 — Navigation and Amenities in same row */}
+          <div className="flex flex-col sm:flex-row justify-center items-start gap-10 sm:gap-16 md:gap-20 lg:gap-24 w-full max-w-3xl">
+            {/* Column 2 — Structural Navigation */}
+            <div className="flex flex-col items-center text-center flex-1">
+              <h5 className="font-body uppercase tracking-widest2 text-gold text-xs mb-5">Explore</h5>
+              <ul className="space-y-3">
+                {exploreLinks.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="font-body text-sm text-cream/50 hover:text-gold transition-colors">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Column 3 — Amenities */}
-          <div>
-            <h5 className="font-body uppercase tracking-widest2 text-gold text-xs mb-5">Amenities</h5>
-            <ul className="space-y-3">
+            {/* Column 3 — Amenities */}
+            <div className="flex flex-col items-center text-center flex-1">
+              <h5 className="font-body uppercase tracking-widest2 text-gold text-xs mb-5">Amenities</h5>
+              <ul className="space-y-3">
               {amenities.map((item) => (
                 <li key={item} className="font-body text-sm text-cream/50 cursor-default">
                   {item}
@@ -56,11 +58,12 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+        </div>
 
         {/* Bottom bar */}
         <div className="border-t border-cream/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-body text-[10px] text-cream/30">
-            © 2026 {siteConfig.name}. All rights reserved.
+            &copy; 2026 {siteConfig.name}. All rights reserved.
           </p>
         </div>
       </div>

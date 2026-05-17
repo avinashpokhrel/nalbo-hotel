@@ -15,13 +15,13 @@ import 'swiper/css/navigation';
  */
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="bg-espresso py-24 relative overflow-hidden">
+    <section id="testimonials" className="bg-espresso py-16 sm:py-20 md:py-24 relative overflow-hidden">
       <div className="grain absolute inset-0 z-[1] opacity-5 pointer-events-none" />
       
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-12 lg:mb-16">
-          <span className="font-body uppercase tracking-[0.3em] text-gold text-[10px] block mb-4">Guest Experiences</span>
-          <h2 className="font-display italic font-light text-cream text-3xl md:text-5xl lg:text-6xl text-center w-full">Words from Our Soulful Travelers</h2>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+          <span className="font-body uppercase tracking-[0.3em] text-gold text-[10px] block mb-3 sm:mb-4">Guest Experiences</span>
+          <h2 className="font-display italic font-light text-cream text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center w-full px-2">Words from Our Soulful Travelers</h2>
         </div>
 
         <div className="relative group/nav">
@@ -36,21 +36,21 @@ export default function Testimonials() {
               nextEl: '.testi-next',
             }}
             loop={true}
-            className="testimonial-swiper pb-24"
+            className="testimonial-swiper pb-16 sm:pb-20 md:pb-24"
           >
             {siteConfig.testimonials.map((testi) => (
               <SwiperSlide key={testi.id}>
-                <div className="flex flex-col items-center text-center">
-                  <Quote size={48} className="text-gold/20 mb-8" />
-                  <div className="flex gap-1 mb-8">
+                <div className="flex flex-col items-center text-center px-2 sm:px-4">
+                  <Quote size={32} className="sm:w-10 sm:h-10 md:w-12 md:h-12 text-gold/20 mb-4 sm:mb-6 md:mb-8 flex-shrink-0" />
+                  <div className="flex gap-1 mb-4 sm:mb-6 md:mb-8">
                     {[...Array(testi.rating)].map((_, i) => (
                       <Star key={i} size={14} className="fill-gold text-gold" />
                     ))}
                   </div>
-                  <p className="font-display italic text-2xl lg:text-3xl text-cream/90 leading-relaxed mb-10 max-w-3xl px-4">
+                  <p className="font-display italic text-xl sm:text-2xl lg:text-3xl text-cream/90 leading-relaxed mb-6 sm:mb-8 md:mb-10 max-w-3xl break-words hyphens-auto">
                     "{testi.quote}"
                   </p>
-                  <div className="flex items-center gap-4 mb-8">
+                  <div className="flex items-center gap-4 mb-4 sm:mb-6 md:mb-8">
                     <div className="text-center">
                       <p className="font-body text-cream font-medium text-sm uppercase tracking-widest">{testi.name}</p>
                       <p className="font-body text-gold/60 text-[10px] uppercase tracking-widest mt-1">{testi.country}</p>

@@ -7,9 +7,9 @@ import { fadeUp, staggerContainer } from '@/animations';
  */
 export default function Facilities() {
   return (
-    <section id="facilities" className="bg-cream py-24 border-b border-gold/10">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+    <section id="facilities" className="bg-cream py-16 sm:py-20 md:py-24 border-b border-gold/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ export default function Facilities() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-display italic text-5xl text-charcoal"
+            className="font-display italic text-3xl sm:text-4xl md:text-5xl text-charcoal"
           >
             Everything You Need, and More
           </motion.h2>
@@ -34,7 +34,7 @@ export default function Facilities() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 md:gap-10"
         >
           {siteConfig.facilities.map((facility) => {
             const IconComponent = facility.icon;
@@ -42,15 +42,15 @@ export default function Facilities() {
               <motion.div 
                 key={facility.id}
                 variants={fadeUp}
-                className="flex flex-col items-center text-center group cursor-default"
+                className="flex flex-col items-center text-center group cursor-default px-2 sm:px-0"
               >
-                <div className="w-16 h-16 rounded-full bg-ivory border-2 border-ivory flex items-center justify-center mb-4 group-hover:border-gold transition-all duration-300 shadow-sm">
-                  {IconComponent && <IconComponent size={22} className="text-mocha group-hover:text-gold transition-colors" />}
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-ivory border-2 border-ivory flex items-center justify-center mb-3 sm:mb-4 group-hover:border-gold transition-all duration-300 shadow-sm">
+                  {IconComponent && <IconComponent size={20} className="text-mocha group-hover:text-gold transition-colors sm:w-[22px] sm:h-[22px]" />}
                 </div>
-                <h4 className="font-body uppercase text-xs tracking-widest text-charcoal mb-1 font-bold">
+                <h4 className="font-body uppercase text-[10px] sm:text-xs tracking-widest text-charcoal mb-1 font-bold">
                   {facility.label}
                 </h4>
-                <p className="font-body text-[11px] text-mocha">
+                <p className="font-body text-[10px] sm:text-[11px] text-mocha leading-snug">
                   {facility.description}
                 </p>
               </motion.div>

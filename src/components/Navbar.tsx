@@ -49,7 +49,7 @@ export default function Navbar() {
       */}
       <nav
         className={clsx(
-          'fixed top-0 w-full z-[100] transition-all duration-500 flex items-center justify-between px-6 lg:px-16',
+          'fixed top-0 w-full z-[100] transition-all duration-500 flex items-center justify-between px-4 sm:px-6 lg:px-16',
           scrolled ? 'py-4 bg-cream/95 backdrop-blur-md shadow-sm' : 'py-8 lg:py-10 bg-transparent'
         )}
       >
@@ -84,7 +84,7 @@ export default function Navbar() {
           {/* Booking CTA - Desktop Only */}
           <button
             onClick={openBookingModal}
-            className="hidden lg:block bg-gold text-white font-body uppercase tracking-widest text-[11px] px-8 py-3 rounded-full hover:bg-gold/85 transition-all duration-300 font-bold shadow-lg shadow-gold/10 text-center"
+            className="hidden lg:block bg-gold text-white font-body uppercase tracking-widest text-[11px] px-8 py-3 rounded-full hover:bg-gold/85 transition-all duration-300 font-bold shadow-lg shadow-gold/10 text-center whitespace-nowrap"
           >
             Book a Stay
           </button>
@@ -93,11 +93,12 @@ export default function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(true)}
             className={clsx(
-              'lg:hidden transition-colors duration-500',
+              'lg:hidden transition-colors duration-500 p-2 -mr-2',
               scrolled ? 'text-charcoal' : 'text-cream'
             )}
+            aria-label="Open menu"
           >
-            <Menu size={24} />
+            <Menu size={28} />
           </button>
         </div>
       </nav>
@@ -119,7 +120,8 @@ export default function Navbar() {
             {/* Close Button */}
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="absolute top-8 right-8 text-cream hover:text-gold transition-colors"
+              className="absolute top-8 right-8 text-cream hover:text-gold transition-colors p-2"
+              aria-label="Close menu"
             >
               <X size={32} />
             </button>
@@ -144,7 +146,7 @@ export default function Navbar() {
                 setMobileMenuOpen(false);
                 openBookingModal();
               }}
-              className="mt-4 bg-gold text-white rounded-full px-10 py-4 uppercase tracking-widest text-xs font-body hover:bg-gold/85 transition-all shadow-xl shadow-gold/10"
+              className="mt-4 bg-gold text-white rounded-full px-10 py-4 uppercase tracking-widest text-xs font-body hover:bg-gold/85 transition-all shadow-xl shadow-gold/10 whitespace-nowrap"
             >
               Book Now
             </button>

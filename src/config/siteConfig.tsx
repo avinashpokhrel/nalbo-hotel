@@ -1,4 +1,8 @@
 import { Wifi, HeartPulse, GlassWater, ConciergeBell, Utensils, Car, Instagram, Facebook } from 'lucide-react';
+import hero1 from '@/assets/hero/1.png';
+import hero2 from '@/assets/hero/2.png';
+import hero3 from '@/assets/hero/3.png';
+import hero4 from '@/assets/hero/4.png';
 import { seo } from './seo';
 
 // ── Custom TikTok icon (not in Lucide) ────────────────────────────────────────
@@ -40,12 +44,7 @@ export const siteConfig = {
     tagline:        seo.tagline,
     title:          'The Go-To Hotel for a Stay in Dharan',
     subDescription: 'Nalbo Hotel offers comfortable and cozy rooms at affordable prices in the heart of Dharan.',
-    images: [
-        "/src/assets/hero/1.png",
-        "/src/assets/hero/2.png",
-        "/src/assets/hero/3.png",
-        "/src/assets/hero/4.png",
-    ],
+    images: [hero1, hero2, hero3, hero4],
     carouselConfig: {
       autoplayDelay: 5000,
     },

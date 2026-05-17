@@ -62,9 +62,6 @@ export default function Footer() {
           <p className="font-body text-[10px] text-cream/30">
             © 2026 {siteConfig.name}. All rights reserved.
           </p>
-          <p className="font-body text-[10px] text-cream/30">
-            Designed with warmth in Nepal 🇳🇵
-          </p>
         </div>
       </div>
     </footer>

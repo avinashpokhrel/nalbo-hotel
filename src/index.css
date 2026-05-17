@@ -2,13 +2,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ivory: #F7F3ED;
-  --color-cream: #FDFAF6;
-  --color-charcoal: #1C1A17;
-  --color-mocha: #6B5F52;
-  --color-gold: #C9A84C;
-  --color-sage: #7D9B76;
-  --color-espresso: #2B2318;
+  --color-ivory: #f8fafc;
+  --color-cream: #ffffff;
+  --color-charcoal: #0f172a;
+  --color-mocha: #64748b; /* Blue Gray / Slate */
+  --color-gold: #1d4ed8;  /* Primary Blue */
+  --color-sage: #60a5fa;  /* Secondary Light Blue */
+  --color-espresso: #020617; /* Dark Blue */
 
   --font-display: "Cormorant Garamond", serif;
   --font-body: "DM Sans", sans-serif;
@@ -17,18 +17,22 @@
 }
 
 :root {
-  --gold-glow: rgba(201, 168, 76, 0.12);
+  --gold-glow: rgba(29, 78, 216, 0.12);
   --grain-opacity: 0.04;
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
 
 body {
-  background-color: #F7F3ED;
-  color: #1C1A17;
+  background-color: #f8fafc;
+  color: #0f172a;
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* Grain texture overlay utility */
@@ -54,18 +58,18 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #C9A84C;
+  background-color: var(--color-gold);
   transition: width 0.3s ease;
 }
 .nav-link:hover::after { width: 100%; }
 
 /* Swiper custom pagination dots */
-.swiper-pagination-bullet { background: #C9A84C !important; }
+.swiper-pagination-bullet { background: var(--color-gold) !important; }
 .swiper-pagination-bullet-active { opacity: 1 !important; }
 
 /* Swiper navigation arrows */
 .swiper-button-next, .swiper-button-prev {
-  color: #C9A84C !important;
+  color: var(--color-gold) !important;
   transform: scale(0.7);
 }
 .swiper-button-next::after, .swiper-button-prev::after {

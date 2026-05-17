@@ -49,7 +49,7 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeBookingModal}
-              className="absolute inset-0 bg-charcoal/60 backdrop-blur-sm cursor-pointer"
+              className="absolute inset-0 bg-charcoal/80 cursor-pointer"
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -79,7 +79,7 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
 
                 <div className="bg-ivory border border-gold/10 rounded-2xl p-6 mb-8 relative group">
                   <p className="font-body text-[10px] uppercase tracking-widest text-mocha/50 mb-2 font-bold">Reception Desk</p>
-                  <p className="font-display text-2xl lg:text-3xl text-charcoal font-medium tracking-tight">
+                  <p className="font-body text-2xl lg:text-3xl text-charcoal font-bold tracking-tight">
                     {siteConfig.contact.phone}
                   </p>
                   
@@ -92,16 +92,36 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
                   </button>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <a 
                     href={`tel:${siteConfig.contact.phone}`}
-                    className="flex items-center justify-center gap-3 w-full bg-gold text-espresso font-body uppercase tracking-[0.2em] text-[11px] py-5 rounded-full hover:bg-gold/85 transition-all font-bold shadow-lg shadow-gold/20"
+                    className="flex items-center justify-center gap-3 w-full bg-gold text-white font-body uppercase tracking-[0.2em] text-[11px] py-5 rounded-full hover:bg-gold/85 transition-all font-bold shadow-lg shadow-gold/20"
                   >
                     <Phone size={14} />
                     Call Reception Now
                   </a>
                   
-                  <p className="font-body text-[10px] text-mocha/40 uppercase tracking-widest">
+                  <div className="pt-4 border-t border-gold/10">
+                    <p className="font-body text-[10px] text-mocha/70 uppercase tracking-widest mb-4">
+                      Or Connect via Socials
+                    </p>
+                    <div className="flex justify-center gap-6">
+                      {siteConfig.socials.map((social) => (
+                        <a
+                          key={social.name}
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-12 h-12 rounded-full bg-ivory border border-gold/10 flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-all shadow-sm"
+                          title={social.name}
+                        >
+                          <social.icon size={20} />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                  <p className="font-body text-[10px] text-mocha/70 uppercase tracking-widest">
                     Available 24/7 for our guests
                   </p>
                 </div>

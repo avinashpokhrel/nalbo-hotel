@@ -60,7 +60,7 @@ export default function Navbar() {
               scrolled ? 'text-charcoal' : 'text-cream'
             )}
           >
-            {siteConfig.name.split(' ')[1].toUpperCase()}
+            {siteConfig.name.split(' ')[0].toUpperCase()}
           </span>
         </a>
 
@@ -72,7 +72,7 @@ export default function Navbar() {
               href={link.href}
               className={clsx(
                 'font-body uppercase text-[11px] tracking-[0.15em] nav-link transition-colors duration-500 font-medium',
-                scrolled ? 'text-mocha' : 'text-cream/80'
+                scrolled ? 'text-gold' : 'text-cream'
               )}
             >
               {link.name}
@@ -84,10 +84,7 @@ export default function Navbar() {
           {/* Booking CTA - Desktop Only */}
           <button
             onClick={openBookingModal}
-            className={clsx(
-              'hidden lg:block rounded-full px-6 py-2.5 text-[11px] uppercase tracking-[0.1em] font-body transition-all duration-300 hover:bg-gold hover:text-espresso hover:border-gold',
-              'border border-gold text-gold'
-            )}
+            className="hidden lg:block bg-gold text-white font-body uppercase tracking-widest text-[11px] px-8 py-3 rounded-full hover:bg-gold/85 transition-all duration-300 font-bold shadow-lg shadow-gold/10 text-center"
           >
             Book a Stay
           </button>
@@ -147,7 +144,7 @@ export default function Navbar() {
                 setMobileMenuOpen(false);
                 openBookingModal();
               }}
-              className="mt-4 bg-gold text-espresso rounded-full px-10 py-4 uppercase tracking-widest text-xs font-body hover:bg-gold/85 transition-all shadow-xl shadow-gold/10"
+              className="mt-4 bg-gold text-white rounded-full px-10 py-4 uppercase tracking-widest text-xs font-body hover:bg-gold/85 transition-all shadow-xl shadow-gold/10"
             >
               Book Now
             </button>

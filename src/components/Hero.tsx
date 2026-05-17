@@ -63,41 +63,33 @@ export default function Hero() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="relative z-20 max-w-4xl mx-auto"
         >
-          <motion.p variants={fadeUp} className="font-body uppercase tracking-[0.25em] text-gold text-[11px] mb-6 font-semibold">
+          <motion.p variants={fadeUp} className="font-body uppercase tracking-[0.25em] text-white text-[11px] mb-6 font-bold drop-shadow-md">
             {hero.tagline}
           </motion.p>
 
-          <motion.h1 variants={fadeUp} className="font-display font-light italic text-cream text-4xl md:text-6xl lg:text-[84px] lg:leading-[1.1] mb-6 lg:mb-8">
+          <motion.h1 variants={fadeUp} className="font-display font-light italic text-cream text-4xl md:text-6xl lg:text-[84px] lg:leading-[1.1] mb-6 lg:mb-8 drop-shadow-lg">
             {hero.title}
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="font-body text-cream/70 text-base md:text-lg lg:text-xl leading-relaxed mb-8 lg:mb-12 max-w-2xl mx-auto">
+          <motion.p variants={fadeUp} className="font-body text-cream text-base md:text-lg lg:text-xl leading-relaxed mb-8 lg:mb-12 max-w-2xl mx-auto drop-shadow-sm">
              {hero.subDescription}
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex gap-4 flex-wrap justify-center">
-            <a href="#rooms" className="bg-gold text-espresso font-body uppercase tracking-widest text-xs px-10 py-4 rounded-full hover:bg-gold/85 transition-all duration-300 font-bold shadow-xl shadow-gold/10 text-center">
+            <a href="#rooms" className="bg-gold text-white font-body uppercase tracking-widest text-xs px-10 py-4 rounded-full hover:bg-gold/85 transition-all duration-300 font-bold shadow-xl shadow-gold/10 text-center">
               Explore Rooms
             </a>
             <button 
               onClick={openBookingModal}
               className="border border-cream/50 text-cream font-body uppercase tracking-widest text-xs px-10 py-4 rounded-full hover:border-gold hover:text-gold transition-all duration-300 backdrop-blur-sm"
             >
-              Book a Stay
+              Book Now
             </button>
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Navigation Arrows */}
-      <button className="hero-prev hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full border border-cream/30 bg-charcoal/20 items-center justify-center text-cream hover:bg-gold hover:text-espresso hover:border-gold transition-all duration-300 backdrop-blur-md shadow-lg">
-        <ChevronLeft size={32} strokeWidth={1} />
-      </button>
-      <button className="hero-next hidden lg:flex absolute right-6 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full border border-cream/30 bg-charcoal/20 items-center justify-center text-cream hover:bg-gold hover:text-espresso hover:border-gold transition-all duration-300 backdrop-blur-md shadow-lg">
-        <ChevronRight size={32} strokeWidth={1} />
-      </button>
 
     </section>
   );

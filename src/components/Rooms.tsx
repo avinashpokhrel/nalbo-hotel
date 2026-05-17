@@ -35,13 +35,13 @@ export default function Rooms() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
           <div>
-            <span className="font-body uppercase tracking-[0.3em] text-gold text-xs block mb-4">Accommodation</span>
+            <span className="font-body uppercase tracking-[0.3em] text-sage text-xs block mb-4">Accommodation</span>
             <h2 className="font-display italic font-light text-charcoal text-3xl md:text-5xl lg:text-6xl">
               Sanctuaries of Comfort
             </h2>
           </div>
           <p className="font-body text-mocha/70 text-sm lg:text-base max-w-md">
-            Each room at Hotel Dharaney is a curated blend of modern luxury and local soul, designed to be your serene escape in Dharan.
+            At Nalbo Hotel, we offer a selection of comfortable and cozy rooms designed to be your serene home away from home in Dharan.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default function Rooms() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {room.tag && (
-                  <div className="absolute top-6 left-6 bg-gold text-espresso font-body uppercase text-[10px] tracking-widest px-4 py-1.5 rounded-full font-bold">
+                  <div className="absolute top-6 left-6 bg-gold text-white font-body uppercase text-[10px] tracking-widest px-4 py-1.5 rounded-full font-bold">
                     {room.tag}
                   </div>
                 )}
@@ -89,7 +89,7 @@ export default function Rooms() {
                   </div>
                 </div>
                 <h3 className="font-display italic text-2xl text-charcoal mb-4 group-hover:text-gold transition-colors">{room.name}</h3>
-                <div className="flex items-center justify-between mt-6 pt-6 border-t border-gold/10">
+                <div className="flex items-center justify-between mt-6 pt-6 border-t border-gold/20">
                   <p className="font-body text-charcoal font-medium">{room.price} <span className="text-xs text-mocha/50 font-normal">/ night</span></p>
                   <ChevronRight size={20} className="text-gold transform group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -108,7 +108,7 @@ export default function Rooms() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedRoom(null)}
-              className="absolute inset-0 bg-charcoal/50 backdrop-blur-sm cursor-pointer"
+              className="absolute inset-0 bg-charcoal/80 cursor-pointer"
             />
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 30 }}
@@ -118,7 +118,7 @@ export default function Rooms() {
             >
               <button 
                 onClick={() => setSelectedRoom(null)}
-                className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-cream shadow-lg flex items-center justify-center text-charcoal hover:bg-gold hover:text-espresso transition-all"
+                className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-cream shadow-lg flex items-center justify-center text-charcoal hover:bg-gold hover:text-white transition-all"
               >
                 <X size={24} />
               </button>
@@ -152,7 +152,7 @@ export default function Rooms() {
 
               {/* Info Section */}
               <div className="w-full lg:w-2/5 p-8 lg:p-14 overflow-y-auto">
-                <span className="font-body uppercase tracking-[0.2em] text-gold text-[10px] block mb-4 font-bold">Luxury Collection</span>
+                <span className="font-body uppercase tracking-[0.2em] text-sage text-[10px] block mb-4 font-bold">Luxury Collection</span>
                 <h3 className="font-display italic text-3xl lg:text-5xl text-charcoal mb-6 lg:mb-8 leading-tight">{selectedRoom.name}</h3>
                 
                 <p className="font-body text-mocha/80 text-base leading-relaxed mb-10">
@@ -160,11 +160,11 @@ export default function Rooms() {
                 </p>
 
                 <div className="grid grid-cols-2 gap-6 mb-12">
-                  <div className="bg-ivory p-4 rounded-2xl border border-gold/10">
+                  <div className="bg-ivory p-4 rounded-2xl border border-gold/20">
                     <p className="font-body text-[10px] uppercase tracking-widest text-mocha/50 mb-1">Total Space</p>
                     <p className="font-body text-charcoal font-medium">{selectedRoom.area} m²</p>
                   </div>
-                  <div className="bg-ivory p-4 rounded-2xl border border-gold/10">
+                  <div className="bg-ivory p-4 rounded-2xl border border-gold/20">
                     <p className="font-body text-[10px] uppercase tracking-widest text-mocha/50 mb-1">Max Guests</p>
                     <p className="font-body text-charcoal font-medium">{selectedRoom.sleeps} Adults</p>
                   </div>
@@ -182,14 +182,14 @@ export default function Rooms() {
                   </div>
                 </div>
 
-                <div className="mt-auto pt-10 border-t border-gold/10 flex flex-col gap-6">
+                <div className="mt-auto pt-10 border-t border-gold/20 flex flex-col gap-6">
                   <div className="flex items-end gap-2">
                     <span className="font-body text-3xl font-medium text-charcoal">{selectedRoom.price}</span>
                     <span className="font-body text-mocha/50 text-sm mb-1">/ per night</span>
                   </div>
                   <button 
                     onClick={openBookingModal}
-                    className="w-full bg-gold text-espresso font-body uppercase tracking-[0.2em] text-[11px] py-5 rounded-full hover:bg-gold/85 transition-all font-bold shadow-lg shadow-gold/20"
+                    className="w-full bg-gold text-white font-body uppercase tracking-[0.2em] text-[11px] py-5 rounded-full hover:bg-gold/85 transition-all font-bold shadow-lg shadow-gold/20"
                   >
                     Reserve This Room
                   </button>

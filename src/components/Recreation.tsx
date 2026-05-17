@@ -8,24 +8,24 @@ import { fadeUp, staggerContainer } from '@/animations';
 export default function Recreation() {
   const features = [
     {
-      icon: Droplets,
-      title: 'Rooftop Swimming Pool',
-      description: 'Unwind in our rooftop pool overlooking the Dharan skyline. Open year-round, the pool deck offers towel service, loungers, and breathtaking hill views.'
-    },
-    {
       icon: HeartPulse,
-      title: 'Fitness Center',
-      description: 'A fully equipped gym with cardio machines, free weights, and stretching zones. Personal training sessions available on request, seven days a week.'
+      title: 'Comfortable Lounge',
+      description: 'Relax and unwind in our cozy lounge area, designed for quiet moments or social interactions with fellow travelers.'
     },
     {
       icon: Martini,
-      title: 'Bar & Lounge',
-      description: 'Sip handcrafted cocktails and curated spirits in our sophisticated lounge. The perfect space to unwind, socialize, or hold informal meetings after hours.'
+      title: 'Dining Hall',
+      description: 'Our spacious dining hall serves as the heart of the hotel, ideal for meals, meetings, and celebrating special occasions.'
+    },
+    {
+      icon: Droplets,
+      title: 'Secure Parking',
+      description: 'Enjoy the convenience of free on-site parking, ensuring your vehicle is safe and accessible throughout your stay in Dharan.'
     }
   ];
 
   return (
-    <section id="recreation" className="bg-espresso relative overflow-hidden py-24">
+    <section id="recreation" className="bg-ivory relative overflow-hidden py-24">
       {/* Grain texture */}
       <div className="grain absolute inset-0 z-[1] pointer-events-none" />
 
@@ -44,7 +44,7 @@ export default function Recreation() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-display italic text-5xl text-cream"
+            className="font-display italic text-5xl text-charcoal"
           >
             Recharge. Refresh. Rejoice.
           </motion.h2>
@@ -61,13 +61,13 @@ export default function Recreation() {
             <motion.div 
               key={idx}
               variants={fadeUp}
-              className="group border border-cream/10 rounded-2xl p-8 hover:bg-sage/10 hover:border-sage/30 transition-all duration-500"
+              className="group border border-gold/20 rounded-2xl p-8 hover:bg-gold/5 hover:border-gold/30 transition-all duration-500"
             >
               <div className="w-14 h-14 rounded-full border border-gold/30 flex items-center justify-center mb-6 group-hover:border-gold transition-all duration-300">
                 <feature.icon size={22} className="text-gold" />
               </div>
-              <h3 className="font-display italic text-2xl text-cream mb-3">{feature.title}</h3>
-              <p className="font-body text-cream/60 text-sm leading-relaxed">
+              <h3 className="font-display italic text-2xl text-charcoal mb-3">{feature.title}</h3>
+              <p className="font-body text-mocha text-sm leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

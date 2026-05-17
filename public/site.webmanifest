@@ -1,0 +1,41 @@
+{
+  "name": "Nalbo Hotel",
+  "short_name": "Nalbo Hotel",
+  "description": "Comfortable and cozy rooms at affordable prices in the heart of Dharan, Nepal. Free WiFi, dining hall, bar & lounge, and 24-hour room service.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F5F0E8",
+  "theme_color": "#C9A96E",
+  "lang": "en",
+  "categories": ["travel", "lifestyle"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "label": "Nalbo Hotel — Dharan, Nepal"
+    }
+  ]
+}

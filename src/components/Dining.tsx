@@ -24,7 +24,7 @@ export default function Dining() {
             transition={{ delay: 0.1 }}
             className="font-display italic text-3xl md:text-5xl text-charcoal"
           >
-            A Feast for Every Sense
+            Hearty Meals & Warm Service
           </motion.h2>
         </div>
 
@@ -44,12 +44,12 @@ export default function Dining() {
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent" />
             
             <div className="absolute bottom-8 left-8 right-8">
-              <span className="inline-block bg-gold text-espresso text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-body mb-4">
+              <span className="inline-block bg-gold text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-body mb-4">
                 Open 7AM – 10PM
               </span>
-              <h3 className="font-display italic text-3xl text-cream mb-2">Main Restaurant</h3>
+              <h3 className="font-display italic text-3xl text-cream mb-2">Dining Hall</h3>
               <p className="font-body text-cream/70 text-sm max-w-md">
-                Farm-fresh ingredients, authentic Nepali flavors, and contemporary plating. Breakfast, lunch, and dinner served daily.
+                Our versatile dining hall is perfect for family meals, business meetings, and social gatherings. Enjoy authentic flavors in a welcoming setting.
               </p>
             </div>
           </motion.div>
@@ -71,7 +71,7 @@ export default function Dining() {
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent" />
               
               <div className="absolute bottom-6 left-6 right-6">
-                <span className="inline-block bg-gold text-espresso text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-body mb-2">
+                <span className="inline-block bg-gold text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-body mb-2">
                   Open 5PM – 1AM
                 </span>
                 <h3 className="font-display italic text-2xl text-cream mb-1">Bar & Lounge</h3>
@@ -97,7 +97,7 @@ export default function Dining() {
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent" />
               
               <div className="absolute bottom-6 left-6 right-6">
-                <span className="inline-block bg-gold text-espresso text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-body mb-2">
+                <span className="inline-block bg-gold text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-body mb-2">
                   24 Hours
                 </span>
                 <h3 className="font-display italic text-2xl text-cream mb-1">Room Service</h3>

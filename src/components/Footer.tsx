@@ -31,9 +31,9 @@ export default function Footer() {
           </div>
 
           {/* Columns 2 & 3 — Navigation and Amenities in same row */}
-          <div className="flex flex-col sm:flex-row justify-center items-start gap-10 sm:gap-16 md:gap-20 lg:gap-24 w-full max-w-3xl">
+          <div className="flex flex-row flex-wrap justify-center items-start gap-10 sm:gap-16 md:gap-20 lg:gap-24 w-full max-w-3xl">
             {/* Column 2 — Structural Navigation */}
-            <div className="flex flex-col items-center text-center flex-1">
+            <div className="flex flex-col items-center text-center flex-1 min-w-[140px]">
               <h5 className="font-body uppercase tracking-widest2 text-gold text-xs mb-5">Explore</h5>
               <ul className="space-y-3">
                 {exploreLinks.map((link) => (
@@ -47,7 +47,7 @@ export default function Footer() {
             </div>
 
             {/* Column 3 — Amenities */}
-            <div className="flex flex-col items-center text-center flex-1">
+            <div className="flex flex-col items-center text-center flex-1 min-w-[140px]">
               <h5 className="font-body uppercase tracking-widest2 text-gold text-xs mb-5">Amenities</h5>
               <ul className="space-y-3">
               {amenities.map((item) => (

@@ -1,8 +1,8 @@
 import { motion } from 'motion/react';
 import { fadeUp } from '@/animations';
-import diningHallImage from '@assets/dining_hall.JPG';
-import barImage from '@assets/bar.JPG';
-import roomServiceImage from '@assets/24_hr_room_service.JPG';
+import diningHallImage from '@assets/dining_hall.webp';
+import barImage from '@assets/bar.webp';
+import roomServiceImage from '@assets/24_hr_room_service.webp';
 
 /**
  * Gastronomy section showcasing the main restaurant, bar, and room service options.

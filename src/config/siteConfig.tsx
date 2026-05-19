@@ -1,16 +1,16 @@
 import { Wifi, HeartPulse, GlassWater, ConciergeBell, Utensils, Car, Instagram, Facebook } from 'lucide-react';
 
 import { seo } from './seo';
-import hero_image from '@assets/hero.JPG';
-import roomDouble1 from '@assets/rooms/double_bed_ac_room/1.JPG';
-import roomDouble2 from '@assets/rooms/double_bed_ac_room/2.JPG';
-import roomNonAc1 from '@assets/rooms/non_ac_room/1.JPG';
-import roomNonAc2 from '@assets/rooms/non_ac_room/2.JPG';
-import roomNonAc3 from '@assets/rooms/non_ac_room/3.JPG';
-import roomSingle1 from '@assets/rooms/single_bed_ac_room/1.JPG';
-import roomSingle2 from '@assets/rooms/single_bed_ac_room/2.JPG';
-import roomVip1 from '@assets/rooms/vip_suite/1.JPG';
-import roomVip2 from '@assets/rooms/vip_suite/2.JPG';
+import hero_image from '@assets/hero.webp';
+import roomDouble1 from '@assets/rooms/double_bed_ac_room/1.webp';
+import roomDouble2 from '@assets/rooms/double_bed_ac_room/2.webp';
+import roomNonAc1 from '@assets/rooms/non_ac_room/1.webp';
+import roomNonAc2 from '@assets/rooms/non_ac_room/2.webp';
+import roomNonAc3 from '@assets/rooms/non_ac_room/3.webp';
+import roomSingle1 from '@assets/rooms/single_bed_ac_room/1.webp';
+import roomSingle2 from '@assets/rooms/single_bed_ac_room/2.webp';
+import roomVip1 from '@assets/rooms/vip_suite/1.webp';
+import roomVip2 from '@assets/rooms/vip_suite/2.webp';
 
 // ── Custom TikTok icon (not in Lucide) ────────────────────────────────────────
 const TiktokIcon = ({ size = 20, className = '' }: { size?: number; className?: string }) => (

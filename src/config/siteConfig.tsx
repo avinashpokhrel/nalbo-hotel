@@ -1,9 +1,16 @@
 import { Wifi, HeartPulse, GlassWater, ConciergeBell, Utensils, Car, Instagram, Facebook } from 'lucide-react';
-import hero1 from '@/assets/hero/1.png';
-import hero2 from '@/assets/hero/2.png';
-import hero3 from '@/assets/hero/3.png';
-import hero4 from '@/assets/hero/4.png';
+
 import { seo } from './seo';
+import hero_image from '@assets/hero.JPG';
+import roomDouble1 from '@assets/rooms/double_bed_ac_room/1.JPG';
+import roomDouble2 from '@assets/rooms/double_bed_ac_room/2.JPG';
+import roomNonAc1 from '@assets/rooms/non_ac_room/1.JPG';
+import roomNonAc2 from '@assets/rooms/non_ac_room/2.JPG';
+import roomNonAc3 from '@assets/rooms/non_ac_room/3.JPG';
+import roomSingle1 from '@assets/rooms/single_bed_ac_room/1.JPG';
+import roomSingle2 from '@assets/rooms/single_bed_ac_room/2.JPG';
+import roomVip1 from '@assets/rooms/vip_suite/1.JPG';
+import roomVip2 from '@assets/rooms/vip_suite/2.JPG';
 
 // ── Custom TikTok icon (not in Lucide) ────────────────────────────────────────
 const TiktokIcon = ({ size = 20, className = '' }: { size?: number; className?: string }) => (
@@ -20,14 +27,14 @@ const TiktokIcon = ({ size = 20, className = '' }: { size?: number; className?: 
 );
 
 export const siteConfig = {
-  // ── Shared with seo.ts ─────────────────────────────────────────────────────
   name:        seo.name,
   description: seo.footerTagline,
 
   contact: {
-    phone:   seo.contact.phone,
-    address: seo.contact.address,
-    email:   seo.contact.email,
+    phone:    seo.contact.phone,
+    landline: seo.contact.landline,
+    address:  seo.contact.address,
+    email:    seo.contact.email,
     mapLocation: {
       embedUrl: seo.contact.mapEmbedUrl,
     },
@@ -43,8 +50,8 @@ export const siteConfig = {
   hero: {
     tagline:        seo.tagline,
     title:          'The Go-To Hotel for a Stay in Dharan',
-    subDescription: 'Nalbo Hotel offers comfortable and cozy rooms at affordable prices in the heart of Dharan.',
-    images: [hero1, hero2, hero3, hero4],
+    subDescription: 'Experience the difference with our professional hospitality services; Where inspired design and intelligent functionality combine to create hotel spaces that delight every guest.',
+    images: [hero_image],
     carouselConfig: {
       autoplayDelay: 5000,
     },
@@ -54,93 +61,55 @@ export const siteConfig = {
   rooms: [
     {
       id: 1,
-      name: 'Deluxe Room',
-      area: '12.4',
-      sleeps: 2,
-      tag: 'Best Value',
-      price: 'Affordable Pricing',
-      description: 'Our Deluxe Room offers a comfortable and cozy sanctuary, perfectly blending modern amenities with local charm.',
-      amenities: ['1 Double Bed', 'Free WiFi', '24h Room Service', 'Flat-screen TV', 'Parking Available'],
-      mainImage: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&auto=format&fit=crop',
+      name: 'Vip Suite',
+
+      tag: 'Premium',
+      description: 'Our Vip Suite offers a spacious and refined stay experience with elevated comfort and service.',
+      amenities: ['1 King Bed', 'Air Conditioning', 'Free WiFi', '24h Room Service', 'Premium Interior'],
+      mainImage: roomVip1,
       gallery: [
-        'https://images.unsplash.com/photo-1631049307214-da0ec9d70304?w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1631049307248-da0ec9d70304?w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1631049307282-da0ec9d70304?w=800&auto=format&fit=crop',
+        roomVip1,
+        roomVip2,
       ],
     },
     {
       id: 2,
-      name: 'Standard Room',
-      area: '18.5',
-      sleeps: 2,
-      tag: null,
-      price: 'Comfortable Choice',
-      description: 'Our Standard Room provides all the essential comforts for a restful stay, with a focus on coziness and value.',
-      amenities: ['1 Double Bed', 'Free WiFi', 'City View', '24h Room Service', 'Work Desk', 'Safe Box'],
-      mainImage: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&auto=format&fit=crop',
+      name: 'Double Bed AC Room',
+
+      tag: 'AC Room',
+      description: 'A comfortable room with a double bed and air conditioning, ideal for a relaxing stay in Dharan.',
+      amenities: ['1 Double Bed', 'Air Conditioning', 'Free WiFi', '24h Room Service'],
+      mainImage: roomDouble1,
       gallery: [
-        'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&auto=format&fit=crop',
+        roomDouble1,
+        roomDouble2,
       ],
     },
     {
       id: 3,
-      name: 'Cozy Suite',
-      area: '22.2',
-      sleeps: 2,
-      tag: 'Cozy Pick',
-      price: 'Premium Comfort',
-      description: 'The Cozy Suite offers a touch more space and refinement for those who appreciate the finer details of hospitality.',
-      amenities: ['1 Queen Bed', 'Free WiFi', 'Balcony', 'Room Service', 'Coffee Maker', 'Premium Bedding'],
-      mainImage: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&auto=format&fit=crop',
+      name: 'Single Bed AC Room',
+
+      tag: 'AC Room',
+      description: 'A cozy single bed AC room designed for guests looking for comfort and convenience.',
+      amenities: ['1 Single Bed', 'Air Conditioning', 'Free WiFi', '24h Room Service'],
+      mainImage: roomSingle1,
       gallery: [
-        'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&auto=format&fit=crop',
+        roomSingle1,
+        roomSingle2,
       ],
     },
     {
       id: 4,
-      name: 'Executive Room',
-      area: '30.9',
-      sleeps: 2,
-      tag: 'With Jacuzzi',
-      price: 'NPR 8,500',
-      description: 'Indulge in the ultimate luxury with our Executive Room, featuring its own private Jacuzzi for your relaxation.',
-      amenities: ['1 King Bed', 'Jacuzzi', 'Free WiFi', 'Lounge Access', 'Personal Butler', 'Luxury Toiletries'],
-      mainImage: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&auto=format&fit=crop',
+      name: 'Non AC Room',
+
+      tag: null,
+      description: 'A practical and comfortable non AC room for guests who prefer a simple stay experience.',
+      amenities: ['1 Bed', 'Fan', 'Free WiFi', '24h Room Service'],
+      mainImage: roomNonAc1,
       gallery: [
-        'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&auto=format&fit=crop',
-      ],
-    },
-    {
-      id: 5,
-      name: 'Premium Deluxe',
-      area: '30.8',
-      sleeps: 3,
-      tag: 'With Jacuzzi',
-      price: 'NPR 9,200',
-      description: 'Ideal for small families or groups, our Premium Deluxe room combines space, style, and luxury.',
-      amenities: ['2 King Beds', 'Jacuzzi', 'Free WiFi', 'Panoramic View', 'Breakfast Included', 'Evening Turn Down'],
-      mainImage: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&auto=format&fit=crop',
-      gallery: [
-        'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&auto=format&fit=crop',
-      ],
-    },
-    {
-      id: 6,
-      name: 'Premium Executive',
-      area: '30.9',
-      sleeps: 2,
-      tag: 'Best Value',
-      price: 'NPR 10,500',
-      description: 'Our Premium Executive suite offers unmatched comfort and personalized service.',
-      amenities: ['1 King Bed', 'Living Area', 'Free WiFi', 'Butler Service', 'Custom Minibar', 'VIP Airport Transfer'],
-      mainImage: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop',
-      gallery: [
-        'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1631049551257-40c1fef23abc?w=800&auto=format&fit=crop',
+        roomNonAc1,
+        roomNonAc2,
+        roomNonAc3,
       ],
     },
   ],

@@ -23,7 +23,6 @@ function buildSchema(s: typeof seo) {
     telephone: s.contact.phone.replace(/\s/g, ''),
     email: s.contact.email,
     foundingDate: s.foundingDate,
-    priceRange: s.priceRange,
     currenciesAccepted: 'NPR',
     paymentAccepted: 'Cash, Card',
     address: {
@@ -35,11 +34,9 @@ function buildSchema(s: typeof seo) {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: s.geo.lat,
-      longitude: s.geo.lng,
     },
     image: [absImage],
-    logo: { '@type': 'ImageObject', url: `${s.siteUrl}/favicon.svg` },
+    logo: { '@type': 'ImageObject', url: `${s.siteUrl}/favicon.ico` },
     sameAs: Object.values(s.socials),
     hasMap: `https://www.google.com/maps/search/${encodeURIComponent(`${s.name} ${s.contact.address}`)}`,
     openingHours: s.openingHours,
@@ -77,8 +74,6 @@ function buildSeoHead(s: typeof seo): string {
     <!-- ─── Geographic Tags ───────────────────────────────────────────────── -->
     <meta name="geo.region"    content="${s.geo.region}" />
     <meta name="geo.placename" content="${esc(s.geo.placename)}" />
-    <meta name="geo.position"  content="${s.geo.lat};${s.geo.lng}" />
-    <meta name="ICBM"          content="${s.geo.lat}, ${s.geo.lng}" />
 
     <!-- ─── Open Graph / Facebook ────────────────────────────────────────── -->
     <meta property="og:type"         content="website" />
@@ -101,7 +96,7 @@ function buildSeoHead(s: typeof seo): string {
     <meta name="twitter:image:alt"   content="${esc(s.name)} — ${esc(s.contact.address)}" />
 
     <!-- ─── Favicon & Touch Icons ────────────────────────────────────────── -->
-    <link rel="icon"             type="image/svg+xml"           href="/favicon.svg" />
+    <link rel="icon"             type="image/x-icon"            href="/favicon.ico" />
     <link rel="icon"             type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon"             type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180"                href="/apple-touch-icon.png" />
@@ -235,6 +230,7 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
+        '@assets': path.resolve(__dirname, './src/assets'),
       },
     },
 

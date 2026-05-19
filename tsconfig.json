@@ -19,7 +19,10 @@
     "paths": {
       "@/*": [
         "src/*"
-      ]
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
     },
     "allowImportingTsExtensions": true,
     "noEmit": true

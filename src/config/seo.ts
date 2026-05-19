@@ -17,11 +17,11 @@ export const seo = {
 
   // ── Contact ────────────────────────────────────────────────────────────────
   contact: {
-    phone:       '9803411308',
     landline:    '025-579308',
+    phone:       '9803411308',
     address:     'Dharan - 2, Shanti Path',
     email:       'officialhotelnalbo@gmail.com',
-    mapEmbedUrl: 'about:blank',
+    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d222.5578199729276!2d87.28550779233963!3d26.810512810607413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef414bc35d7ca3%3A0x796bb88acc4ee604!2sNalbo%20Hotel%20and%20Restro!5e0!3m2!1sen!2snp!4v1779215105062!5m2!1sen!2snp',
   },
 
   // ── Geographic (local SEO) ─────────────────────────────────────────────────

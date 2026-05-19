@@ -9,7 +9,7 @@
   "background_color": "#F5F0E8",
   "theme_color": "#C9A96E",
   "lang": "en",
-  "categories": ["travel", "lifestyle"],
+  "categories": ["travel", "lifestyle", "hotel", "restro", "restaurant", "stay"],
   "icons": [
     {
       "src": "/favicon.ico",

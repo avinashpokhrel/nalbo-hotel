@@ -46,7 +46,10 @@ export default function ContactBanner() {
                 </div>
                 <div className="flex flex-col gap-1 flex-1">
                   <p className="font-body text-[10px] uppercase tracking-widest text-mocha font-bold">Booking Hotline</p>
-                  <p className="font-body text-mocha/80 text-sm leading-relaxed">{contact.phone}</p>
+                  {contact.landline && (
+                    <p className="font-body text-mocha/80 text-sm leading-relaxed">Landline: {contact.landline}</p>
+                  )}
+                  <p className="font-body text-mocha/80 text-sm leading-relaxed">Mobile: {contact.phone}</p>
                 </div>
               </div>
           
@@ -95,17 +98,27 @@ export default function ContactBanner() {
             viewport={{ once: true }}
             className="h-[400px] md:h-[500px] lg:h-[650px] w-full rounded-[32px] lg:rounded-[40px] overflow-hidden border border-gold/20 shadow-2xl relative group"
           >
-            <iframe 
-              src={contact.mapLocation.embedUrl}
-              width="100%" 
-              height="100%" 
-              style={{ border: 0, filter: 'contrast(1.1) opacity(0.9)' }} 
-              allowFullScreen={true} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              className="transition-all duration-700 group-hover:filter-none group-hover:opacity-100"
-            />
-            
+            {contact.mapLocation.embedUrl === 'about:blank' ? (
+              <div className="w-full h-full bg-ivory flex items-center justify-center text-center px-8">
+                <div>
+                  <p className="font-body uppercase tracking-[0.2em] text-[10px] text-mocha/60 mb-2">Map</p>
+                  <p className="font-display italic text-2xl text-charcoal">Location Map Coming Soon</p>
+                  <p className="font-body text-sm text-mocha/70 mt-3">Please use the address in the contact details for now.</p>
+                </div>
+              </div>
+            ) : (
+              <iframe 
+                src={contact.mapLocation.embedUrl}
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, filter: 'contrast(1.1) opacity(0.9)' }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="transition-all duration-700 group-hover:filter-none group-hover:opacity-100"
+              />
+            )}
+
             {/* Overlay Gradient */}
             <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-gold/20 rounded-[40px]" />
           </motion.div>

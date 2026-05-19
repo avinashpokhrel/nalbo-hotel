@@ -20,7 +20,7 @@ export default function Recreation() {
     {
       icon: Droplets,
       title: 'Secure Parking',
-      description: 'Enjoy the convenience of free on-site parking, ensuring your vehicle is safe and accessible throughout your stay in Dharan.'
+      description: 'Enjoy the convenience of free on-site parking, ensuring your vehicle is safe and accessible throughout your stay.'
     }
   ];
 

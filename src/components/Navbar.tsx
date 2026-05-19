@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { clsx } from 'clsx';
 import { siteConfig } from '@/config/siteConfig';
+import logo from '@assets/logo.png';
 import { useBooking } from '@/context/BookingContext';
 
 /**
@@ -34,10 +35,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'About', href: '#about' },
+    { name: 'Facilities', href: '#facilities' },
     { name: 'Rooms', href: '#rooms' },
     { name: 'Recreation', href: '#recreation' },
     { name: 'Dining', href: '#dining' },
-    { name: 'Facilities', href: '#facilities' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -53,7 +54,15 @@ export default function Navbar() {
           scrolled ? 'py-4 bg-cream/95 backdrop-blur-md shadow-sm' : 'py-8 lg:py-10 bg-transparent'
         )}
       >
-        <a href="/" className="group">
+        <a href="/" className="group flex items-center gap-3" aria-label={`${siteConfig.name} home`}>
+          <img
+            src={logo}
+            alt={`${siteConfig.name} logo`}
+            className={clsx(
+              'h-10 sm:h-11 lg:h-12 w-auto rounded-md transition-all duration-500',
+              scrolled ? 'shadow-sm' : 'shadow-lg'
+            )}
+          />
           <span
             className={clsx(
               'font-display italic text-xl lg:text-3xl tracking-[0.2em] transition-colors duration-500 font-light',

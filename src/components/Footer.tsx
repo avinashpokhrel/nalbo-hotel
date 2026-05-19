@@ -8,13 +8,13 @@ import { siteConfig } from '@/config/siteConfig';
 export default function Footer() {
   const exploreLinks = [
     { label: 'About', href: '#about' },
+    { label: 'Facilities', href: '#facilities' },
     { label: 'Rooms', href: '#rooms' },
     { label: 'Recreation', href: '#recreation' },
     { label: 'Dining', href: '#dining' },
-    { label: 'Facilities', href: '#facilities' },
     { label: 'Contact', href: '#contact' },
   ];
-  const amenities = ['Swimming Pool', 'Fitness Center', 'Bar & Lounge', 'Room Service', 'Free WiFi', 'Parking'];
+  const amenities = ['Free WiFi', 'Dining Hall', 'Bar & Lounge', 'Secure Parking', '24H Room Service'];
 
   return (
     <footer className="bg-espresso border-t border-gold/20">

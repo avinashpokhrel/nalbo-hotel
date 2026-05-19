@@ -12,18 +12,21 @@ const BookingContext = createContext<BookingContextType | undefined>(undefined);
 
 export function BookingProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
+  const [copiedField, setCopiedField] = useState<'primary' | 'secondary' | null>(null);
 
   const openBookingModal = () => setIsOpen(true);
   const closeBookingModal = () => {
     setIsOpen(false);
-    setCopied(false);
+    setCopiedField(null);
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(siteConfig.contact.phone);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const primaryNumber = siteConfig.contact.landline ?? siteConfig.contact.phone;
+  const secondaryNumber = siteConfig.contact.landline ? siteConfig.contact.phone : null;
+
+  const handleCopyNumber = (number: string, field: 'primary' | 'secondary') => {
+    navigator.clipboard.writeText(number);
+    setCopiedField(field);
+    setTimeout(() => setCopiedField(null), 1800);
   };
 
   // Lock body scroll when modal is open
@@ -79,29 +82,74 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
                   To ensure the best possible experience and personalized service, we handle all reservations via direct communication. Please call our reception to finalize your stay.
                 </p>
 
-                <div className="bg-ivory border border-gold/10 rounded-2xl p-4 mb-6 relative group">
-                  <p className="font-body text-[10px] uppercase tracking-widest text-mocha/50 mb-2 font-bold">Reception Desk</p>
-                  <p className="font-serif text-xl lg:text-2xl text-charcoal">
-                    {siteConfig.contact.phone}
-                  </p>
-                  
-                  <button 
-                    onClick={handleCopy}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-lg hover:bg-gold/10 transition-all text-gold"
-                    title="Copy Phone Number"
-                  >
-                    {copied ? <Check size={16} /> : <Copy size={16} />}
-                  </button>
+                <div className="bg-ivory border border-gold/10 rounded-2xl p-4 mb-6 text-left space-y-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="font-body text-[10px] uppercase tracking-widest text-mocha/50 mb-1 font-bold">Landline</p>
+                      <button
+                        type="button"
+                        onClick={() => handleCopyNumber(primaryNumber, 'primary')}
+                        className="font-serif text-xl lg:text-2xl text-charcoal hover:text-gold transition-colors text-left"
+                        title="Click to copy"
+                      >
+                        {primaryNumber}
+                      </button>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => handleCopyNumber(primaryNumber, 'primary')}
+                      className="mt-1 p-2 rounded-lg hover:bg-gold/10 transition-all text-gold"
+                      title="Copy landline"
+                      aria-label="Copy primary landline"
+                    >
+                      {copiedField === 'primary' ? <Check size={16} /> : <Copy size={16} />}
+                    </button>
+                  </div>
+
+                  {secondaryNumber && (
+                    <div className="pt-3 border-t border-gold/10 flex items-start justify-between gap-3">
+                      <div>
+                        <p className="font-body text-[10px] uppercase tracking-widest text-mocha/50 mb-1 font-bold">Mobile</p>
+                        <button
+                          type="button"
+                          onClick={() => handleCopyNumber(secondaryNumber, 'secondary')}
+                          className="font-serif text-lg lg:text-xl text-charcoal hover:text-gold transition-colors text-left"
+                          title="Click to copy"
+                        >
+                          {secondaryNumber}
+                        </button>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleCopyNumber(secondaryNumber, 'secondary')}
+                        className="mt-1 p-2 rounded-lg hover:bg-gold/10 transition-all text-gold"
+                        title="Copy mobile"
+                        aria-label="Copy secondary mobile"
+                      >
+                        {copiedField === 'secondary' ? <Check size={16} /> : <Copy size={16} />}
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 <div className="space-y-4">
                   <a 
-                    href={`tel:${siteConfig.contact.phone}`}
+                    href={`tel:${primaryNumber}`}
                     className="flex items-center justify-center gap-3 w-full bg-gold text-white font-body uppercase tracking-[0.2em] text-[11px] py-4 rounded-full hover:bg-gold/85 transition-all font-bold shadow-lg shadow-gold/20"
                   >
                     <Phone size={14} />
                     Call Reception Now
                   </a>
+
+                  {secondaryNumber && (
+                    <a 
+                      href={`tel:${secondaryNumber}`}
+                      className="flex items-center justify-center gap-3 w-full border border-gold text-gold font-body uppercase tracking-[0.2em] text-[11px] py-4 rounded-full hover:bg-gold/10 transition-all font-bold"
+                    >
+                      <Phone size={14} />
+                      Call Mobile Hotline
+                    </a>
+                  )}
                   
                   <div className="pt-4 border-t border-gold/10">
                     <p className="font-body text-[10px] text-mocha/70 uppercase tracking-widest mb-4">

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import CountUp from 'react-countup';
+
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { fadeUp } from '@/animations';
 
@@ -26,8 +26,8 @@ export default function About() {
           <div className="font-body text-mocha/80 text-base sm:text-lg md:text-xl leading-relaxed space-y-6 md:space-y-8 max-w-2xl mx-auto">
             <p>
               Located on the peaceful Shanti path in Dharan, Nalbo Hotel is your sanctuary of comfort. 
-              Since our establishment in 2026, we have been dedicated to providing high-quality 
-              accommodations at prices that welcome everyone.
+              Since our establishment in 2026 A.D., we have been dedicated to providing high-quality 
+              accommodations with warm hospitality for every guest.
             </p>
             <p>
               Whether you are here for a business meeting in our dining hall or a relaxing stay 
@@ -36,26 +36,6 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 mt-12 md:mt-20 pt-12 md:pt-20 border-t border-gold/20">
-            <div>
-              <p className="text-3xl lg:text-5xl font-display italic text-charcoal mb-2">
-                <CountUp end={6} duration={2.5} start={inView ? 0 : undefined} />
-              </p>
-              <p className="font-body text-[10px] uppercase tracking-widest text-mocha/60">Room Categories</p>
-            </div>
-            <div>
-              <p className="text-3xl lg:text-5xl font-display italic text-charcoal mb-2">
-                <CountUp end={1200} duration={2.5} suffix="+" start={inView ? 0 : undefined} />
-              </p>
-              <p className="font-body text-[10px] uppercase tracking-widest text-mocha/60">Annual Guests</p>
-            </div>
-            <div className="sm:col-span-1">
-              <p className="text-3xl lg:text-5xl font-display italic text-charcoal mb-2">
-                <CountUp end={24} duration={1.5} suffix="h" start={inView ? 0 : undefined} />
-              </p>
-              <p className="font-body text-[10px] uppercase tracking-widest text-mocha/60">Room Service</p>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

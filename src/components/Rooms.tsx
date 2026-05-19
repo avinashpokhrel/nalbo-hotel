@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
-import { X, Ruler, Users, ChevronRight, Check } from 'lucide-react';
+import { X, ChevronRight, Check } from 'lucide-react';
 import { siteConfig } from '@/config/siteConfig';
 import { fadeUp, staggerContainer } from '@/animations';
 import { useBooking } from '@/context/BookingContext';
@@ -41,7 +41,7 @@ export default function Rooms() {
             </h2>
           </div>
           <p className="font-body text-mocha/70 text-sm lg:text-base max-w-md">
-            At Nalbo Hotel, we offer a selection of comfortable and cozy rooms designed to be your serene home away from home in Dharan.
+            We offer a curated selection of comfortable, cozy rooms designed to be your serene home away from home in Dharan.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export default function Rooms() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-6 sm:gap-7 md:gap-8"
         >
           {siteConfig.rooms.map((room) => (
             <motion.div 
@@ -78,19 +78,9 @@ export default function Rooms() {
                 </div>
               </div>
               <div className="p-5 sm:p-6 md:p-8">
-                <div className="flex items-center gap-4 sm:gap-6 text-[10px] uppercase tracking-widest text-mocha/50 mb-3 sm:mb-4 font-body">
-                  <div className="flex items-center gap-1.5 sm:gap-2">
-                    <Ruler size={14} className="text-gold" />
-                    {room.area}m²
-                  </div>
-                  <div className="flex items-center gap-1.5 sm:gap-2">
-                    <Users size={14} className="text-gold" />
-                    Sleeps {room.sleeps}
-                  </div>
-                </div>
                 <h3 className="font-display italic text-xl sm:text-2xl text-charcoal mb-3 sm:mb-4 group-hover:text-gold transition-colors">{room.name}</h3>
                 <div className="flex items-center justify-between mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gold/20">
-                  <p className="font-body text-charcoal font-medium text-sm sm:text-base">{room.price} <span className="text-xs text-mocha/50 font-normal">/ night</span></p>
+                  <p className="font-body text-mocha/70 text-xs sm:text-sm uppercase tracking-widest">View details</p>
                   <ChevronRight size={20} className="text-gold transform group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -160,16 +150,7 @@ export default function Rooms() {
                   {selectedRoom.description}
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
-                  <div className="bg-ivory p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-gold/20">
-                    <p className="font-body text-[10px] uppercase tracking-widest text-mocha/50 mb-1">Total Space</p>
-                    <p className="font-body text-sm sm:text-base text-charcoal font-medium">{selectedRoom.area} m²</p>
-                  </div>
-                  <div className="bg-ivory p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-gold/20">
-                    <p className="font-body text-[10px] uppercase tracking-widest text-mocha/50 mb-1">Max Guests</p>
-                    <p className="font-body text-sm sm:text-base text-charcoal font-medium">{selectedRoom.sleeps} Adults</p>
-                  </div>
-                </div>
+
 
                 <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-12">
                   <p className="font-body uppercase tracking-widest text-[10px] text-mocha font-bold">Room Amenities</p>
@@ -184,10 +165,6 @@ export default function Rooms() {
                 </div>
 
                 <div className="mt-auto pt-8 sm:pt-10 border-t border-gold/20 flex flex-col gap-4 sm:gap-6">
-                  <div className="flex items-end gap-2">
-                    <span className="font-body text-2xl sm:text-3xl font-medium text-charcoal">{selectedRoom.price}</span>
-                    <span className="font-body text-mocha/50 text-sm mb-0.5 sm:mb-1">/ per night</span>
-                  </div>
                   <button 
                     onClick={openBookingModal}
                     className="w-full bg-gold text-white font-body uppercase tracking-[0.2em] text-[11px] py-4 sm:py-5 rounded-full hover:bg-gold/85 transition-all font-bold shadow-lg shadow-gold/20"

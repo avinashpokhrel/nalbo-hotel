@@ -1,5 +1,8 @@
 import { motion } from 'motion/react';
 import { fadeUp } from '@/animations';
+import diningHallImage from '@assets/dining_hall.JPG';
+import barImage from '@assets/bar.JPG';
+import roomServiceImage from '@assets/24_hr_room_service.JPG';
 
 /**
  * Gastronomy section showcasing the main restaurant, bar, and room service options.
@@ -37,16 +40,16 @@ export default function Dining() {
             className="rounded-xl sm:rounded-2xl overflow-hidden relative group h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px]"
           >
             <img
-              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&auto=format&fit=crop"
+              src={diningHallImage}
               alt="Main Restaurant"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent" />
             
             <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 right-6 sm:right-8">
-              <span className="inline-block bg-gold text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-body mb-3 sm:mb-4">
+              {/*<span className="inline-block bg-gold text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-body mb-3 sm:mb-4">
                 Open 7AM – 10PM
-              </span>
+              </span>*/}
               <h3 className="font-display italic text-2xl sm:text-3xl text-cream mb-2">Dining Hall</h3>
               <p className="font-body text-cream/70 text-sm max-w-md">
                 Our versatile dining hall is perfect for family meals, business meetings, and social gatherings. Enjoy authentic flavors in a welcoming setting.
@@ -64,19 +67,19 @@ export default function Dining() {
               className="rounded-xl sm:rounded-2xl overflow-hidden relative group h-[240px] sm:h-[260px] md:h-[265px] lg:h-[265px]"
             >
               <img
-                src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&auto=format&fit=crop"
+                src={barImage}
                 alt="Bar & Lounge"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent" />
               
               <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 right-5 sm:right-6">
-                <span className="inline-block bg-gold text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-body mb-2">
+                {/*<span className="inline-block bg-gold text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-body mb-2">
                   Open 5PM – 1AM
-                </span>
+                </span>*/}
                 <h3 className="font-display italic text-xl sm:text-2xl text-cream mb-1 sm:mb-1.5">Bar & Lounge</h3>
                 <p className="font-body text-cream/70 text-xs sm:text-sm">
-                  Premium spirits, handcrafted cocktails, and a curated wine list.
+                  Premium spirits, handcrafted cocktails, and curated list of drinks.
                 </p>
               </div>
             </motion.div>
@@ -90,7 +93,7 @@ export default function Dining() {
               className="rounded-xl sm:rounded-2xl overflow-hidden relative group h-[240px] sm:h-[260px] md:h-[265px] lg:h-[265px]"
             >
               <img
-                src="https://images.unsplash.com/photo-1576866209830-589e1bfbaa4d?w=800&auto=format&fit=crop"
+                src={roomServiceImage}
                 alt="Room Service"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

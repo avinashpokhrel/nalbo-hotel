@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+// import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { fadeUp } from '@/animations';
 import { siteConfig } from '@/config/siteConfig';
 import { useBooking } from '@/context/BookingContext';

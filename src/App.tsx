@@ -17,10 +17,10 @@ export default function App() {
         <Navbar />
         <Hero />
         <About />
+        <Facilities />
         <Rooms />
         <Recreation />
         <Dining />
-        <Facilities />
 {/* <Testimonials /> */} {/* Commented out: Re-enable when client testimonials are ready to be displayed */}
         <ContactBanner />
         <Footer />

@@ -36,7 +36,10 @@ function buildSchema(s: typeof seo) {
       '@type': 'GeoCoordinates',
     },
     image: [absImage],
-    logo: { '@type': 'ImageObject', url: `${s.siteUrl}/favicon.ico` },
+    logo: [
+      { '@type': 'ImageObject', url: `${s.siteUrl}/logo.png`, width: 512, height: 512 },
+      { '@type': 'ImageObject', url: `${s.siteUrl}/apple-touch-icon.png`, width: 180, height: 180 },
+    ],
     sameAs: Object.values(s.socials),
     hasMap: `https://www.google.com/maps/search/${encodeURIComponent(`${s.name} ${s.contact.address}`)}`,
     openingHours: s.openingHours,
@@ -60,6 +63,13 @@ function buildSchema(s: typeof seo) {
 function buildSeoHead(s: typeof seo): string {
   const absImage = s.ogImage.startsWith('http') ? s.ogImage : `${s.siteUrl}${s.ogImage}`;
   const schema   = buildSchema(s);
+  const orgSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: s.name,
+    url: s.siteUrl,
+    logo: `${s.siteUrl}/logo.png`,
+  };
 
   return `
     <!-- ─── Primary Meta Tags ─────────────────────────────────────────────── -->
@@ -99,10 +109,13 @@ function buildSeoHead(s: typeof seo): string {
     <link rel="icon"             type="image/x-icon"            href="/favicon.ico" />
     <link rel="icon"             type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon"             type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon"             type="image/png" sizes="512x512" href="/logo.png" />
     <link rel="apple-touch-icon" sizes="180x180"                href="/apple-touch-icon.png" />
     <link rel="manifest"         href="/site.webmanifest" />
     <meta name="theme-color"              content="#C9A96E" />
     <meta name="msapplication-TileColor" content="#1C1511" />
+    <meta name="msapplication-TileImage" content="/apple-touch-icon.png" />
+    <link rel="preload" as="image" href="/logo.png" />
 
     <!-- ─── Performance: Preconnect / DNS-prefetch ───────────────────────── -->
     <link rel="preconnect"   href="https://maps.googleapis.com" />
@@ -110,7 +123,7 @@ function buildSeoHead(s: typeof seo): string {
 
     <!-- ─── JSON-LD: Hotel / LodgingBusiness Schema ──────────────────────── -->
     <script type="application/ld+json">
-${JSON.stringify(schema, null, 4)}
+${JSON.stringify([schema, orgSchema], null, 4)}
     </script>`.trimStart();
 }
 
@@ -148,19 +161,10 @@ function seoStaticPlugin(): Plugin {
           ``,
           `User-agent: *`,
           `Allow: /`,
+          `Allow: /logo.png`,
           ``,
-          `# Block common scraper bots to preserve crawl budget`,
-          `User-agent: AhrefsBot`,
-          `Disallow: /`,
-          ``,
-          `User-agent: SemrushBot`,
-          `Disallow: /`,
-          ``,
-          `User-agent: MJ12bot`,
-          `Disallow: /`,
-          ``,
-          `User-agent: DotBot`,
-          `Disallow: /`,
+          `# All well-behaved crawlers are welcome. If you need to block specific
+# aggressive scrapers later, add their rules here.`,
           ``,
           `Sitemap: ${siteUrl}/sitemap.xml`,
         ].join('\n'),

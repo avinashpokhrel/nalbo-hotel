@@ -20,6 +20,7 @@ function buildSchema(s: typeof seo) {
     name: s.name,
     description: s.description,
     url: s.siteUrl,
+    developer: { '@type': 'Person', name: s.developerName, url: s.developerUrl },
     telephone: s.contact.phone.replace(/\s/g, ''),
     email: s.contact.email,
     foundingDate: s.foundingDate,

@@ -14,6 +14,8 @@ export const seo = {
   keywords:      'Nalbo Hotel, hotel in Dharan, hotel Dharan Nepal, best hotel Dharan, Shanti path hotel Dharan, cozy hotel Nepal, rooms in Dharan, Dharan accommodation, Nepal hotel booking',
   ogImage:       '/og-image.png',
   footerTagline: "Dharan's favourite destination since 2026 A.D.",
+  developerName: 'Avinash Pokhrel',
+  developerUrl:  'https://avinashpokhrel.com.np',
 
   // ── Contact ────────────────────────────────────────────────────────────────
   contact: {

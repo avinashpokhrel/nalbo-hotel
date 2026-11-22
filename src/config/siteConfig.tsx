@@ -29,6 +29,8 @@ const TiktokIcon = ({ size = 20, className = '' }: { size?: number; className?: 
 export const siteConfig = {
   name:        seo.name,
   description: seo.footerTagline,
+  developerName: seo.developerName,
+  developerUrl: seo.developerUrl,
 
   contact: {
     phone:    seo.contact.phone,

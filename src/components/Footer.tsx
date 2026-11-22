@@ -65,6 +65,17 @@ export default function Footer() {
           <p className="font-body text-[10px] text-cream/30">
             &copy; 2026 {siteConfig.name}. All rights reserved.
           </p>
+          <p className="font-body text-sm text-cream/50 text-center">
+            Website Developed by{' '}
+            <a
+              href={siteConfig.developerUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-cream/80 hover:text-gold underline underline-offset-4 transition-colors"
+            >
+              {siteConfig.developerName}
+            </a>
+          </p>
         </div>
       </div>
     </footer>
